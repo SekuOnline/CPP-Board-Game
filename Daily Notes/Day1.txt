@@ -1,0 +1,26 @@
+Review:
+    Virtual Methods:
+        Methods that are meant to be inherited, have no explicit implementation
+        until they are overwritten by a child class.
+
+    Inheritance:
+        Creating a parent class with attributes and methods that are passed to their children.
+
+    Doxygen:
+        Commenting system (similar to JavaDocs)
+        use by typing /** + 'Enter' 
+        
+Implementation:
+    Set up a basic file structure
+
+    Implemented a base 'Card' class to be inherited by any other card type
+    Spell cards and Army cards are the two current card types.
+        Both card types have their own subtypes, which are enums within their header file.
+
+Immediate Plans:
+    Create a 'Deck' parent class that is inherited by 'ArmyDeck' and 'SpellDeck' classes.
+    Decks should hold an array of card pointers.
+        Pointers are used, as the cards should not be deleted if removed from the deck.
+
+    Create an UML Class diagram to represent the card structure.
+
