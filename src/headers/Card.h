@@ -1,15 +1,14 @@
 #ifndef CARD_H
 #define CARD_H
 
-
-#include <string>
+#include "defs.h"
 
 using namespace std;
 
 class Card{
     public:
-        const string title;
-        const string cardText;
+        string title;
+        string cardText;
 
         Card(string title);
         ~Card();

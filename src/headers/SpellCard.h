@@ -3,28 +3,20 @@
 
 #include "Card.h"
 
-/**
- * @brief Each spell has a type, that will affect the attributes of the spell.
- * 
- */
-enum spellType
-{
-    FIRE,
-    WATER,
-    LAND,
-    WIND
-};
-
 class SpellCard : public Card{
     public: 
-
-        SpellCard(string title, spellType type);
+        SpellType type;
+        
+        SpellCard(string title, SpellType type);
         ~SpellCard();
 
         //title attribute inherited from 'Card'
         
         void print() const;
 
-        spellType type;
+        SpellType getSpellType() const;
+        
+
+        
 };
 #endif

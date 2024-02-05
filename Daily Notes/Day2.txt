@@ -1,0 +1,30 @@
+Review:
+    const attribute: Read only, must be defined within the class, not constructor.
+
+    const function: Must not modify anything within the class.
+
+    Inheritance: Call the base classes' constructor within initialization, pass in any 
+        inherited attributes.
+
+Implementation:
+    Set up basic deck class with an array of pointers to cards,
+    will be inherited by ArmyDeck and SpellDeck classes.
+
+    Moved enums to defs.h for simplicity, may move to their own header if defs becomes bloated
+    to avoid slowing compile time.
+
+Plans:
+    Day 2 Goals (Monday):
+        Headers for Decks, array of pointers to cards, ect.
+        defs.h header for global variables
+
+    Day 3 Goals (Tuesday):
+        Implement basic functions for all card types (CPP files)
+        Implement shuffling in Deck class
+        Add good comments
+
+    Day 4 Goals (Wednesday):
+        Deconstructors (if simple)
+        Unit testing (Test Shuffle function, any other function discussed)
+        Road-mapping (Setting more goals and plans)
+        
