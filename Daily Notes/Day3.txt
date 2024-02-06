@@ -1,0 +1,14 @@
+While implementing shuffle, I realized that using templates is
+required to bypass writing the same code for different classes.
+
+Templates:
+    Allow for the type of an object to be passed as a parameter.
+    In this case, this allows the shuffle() function to take any card type.
+    Thus, it does not have to be written multiple times for ArmyCard and SpellCard.
+    This will be useful for future methods and classes as well.
+
+Need to look into Dynamic Memory Allocation for Cards, review those concepts.
+
+
+
+

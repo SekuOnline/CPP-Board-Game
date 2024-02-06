@@ -7,12 +7,14 @@ class Deck{
 
     public: 
 
-        const Card *deck[deckSize];
+        int cardsRemaining;
+        Card *deck[deckSize];
 
         Deck();
         ~Deck();
 
-        void shuffle();
+        template <class CardTemplate> 
+        void shuffle(CardTemplate* tempCard);
         void print()    const;
         
 };

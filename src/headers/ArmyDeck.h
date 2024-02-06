@@ -6,7 +6,7 @@
 
 class ArmyDeck : public Deck{
     public:
-        const ArmyCard *deck[deckSize];
+        ArmyCard *deck[deckSize];
 
         ArmyDeck();
         ~ArmyDeck();

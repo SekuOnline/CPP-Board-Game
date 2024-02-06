@@ -6,7 +6,7 @@
 
 class SpellDeck : public Deck{
 
-    const SpellCard *deck[deckSize];
+    SpellCard *deck[deckSize];
 
 
     SpellDeck();
