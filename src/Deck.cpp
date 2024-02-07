@@ -1,7 +1,7 @@
 #include "./headers/Deck.h"
 
 Deck::Deck(){
-    
+    cardsRemaining = 0;
 }
 
 /**
@@ -25,6 +25,30 @@ void Deck:: shuffle(CardTemplate* tempCard){
     }
 }
 
+/**
+ * @brief sets the number of remaining cards
+ * Cannot set cards remaining to a number greater than the max decksize.
+ * @param numCards new cardsRemaining value
+ */
+void Deck::setCardsRemaining(int numCards){
+    if (numCards > deckSize) return;
+    cardsRemaining = numCards;
+}
+
+/**
+ * @brief Adds a card to the deck if there is an open spot available.
+ * Cannot add a card if decksize would be exceeded.
+ * The card must be created elsewhere and put into the deck through a pointer.
+ * @param card is a ptr to the card being added to the deck
+ */
+
+template <class CardTemplate>
+void Deck::addCard(CardTemplate* card){
+    if (cardsRemaining >= deckSize) return;
+    deck[cardsRemaining] = card;
+    cardsRemaining++;
+}
+
 
 /**
  * @brief Currently prints # of cards remaining.
@@ -32,4 +56,7 @@ void Deck:: shuffle(CardTemplate* tempCard){
  */
 void Deck::print() const{
     cout<<"Cards Remaining: "<<cardsRemaining<<endl;
+    for(int i = 0; i < cardsRemaining; i++){
+        deck[i]->print();
+    }
 }

@@ -1,0 +1,15 @@
+Implemented a cloning method for Army and Spell decks, primarily for testing.
+
+Messed around with testing (Attempting to get Catch2 testing to work).
+
+Spent a lot of time attempting to get the project to compile.
+Need to look into makefiles for windows.
+Previously, I worked with incredibly basic makefiles on a unix virtual machine
+    for class.
+Now that I am programming on windows and have a project structure,
+    simple makefiles are not working for the purposes I need them to.
+    They require paths from the project directory to each file,
+    and at the moment place the object files into the project directory.
+    Even after this, they still do not compile the project correctly.
+
+Spent too much time on this today, will have to return to it another day (Tomorrow?)

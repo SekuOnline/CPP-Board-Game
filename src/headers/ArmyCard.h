@@ -3,7 +3,7 @@
 
 #include "Card.h"
 
-#endif //ARMY_H
+
 
 class ArmyCard : public Card{
     public:
@@ -16,3 +16,4 @@ class ArmyCard : public Card{
 
         ArmyType getArmyType() const;
 };
+#endif //ARMY_H

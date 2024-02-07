@@ -18,3 +18,4 @@ SpellCard::~SpellCard(){
 SpellType SpellCard::getSpellType() const{
     return this->type;
 }
+

@@ -5,12 +5,14 @@
 #include "SpellCard.h"
 
 class SpellDeck : public Deck{
+    public:
+        SpellCard *deck[deckSize];
 
-    SpellCard *deck[deckSize];
 
+        SpellDeck();
+        ~SpellDeck();
 
-    SpellDeck();
-    ~SpellDeck();
+        SpellDeck* clone() const{return new SpellDeck(*this);}
 
 };
 #endif //SPELLDECK_H
