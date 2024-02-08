@@ -1,0 +1,3 @@
+Busier day today, completed a basic UML-Class diagram for the deck system.
+
+Tomorrow: Read documentation on formatting makefiles.
