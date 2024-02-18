@@ -1,30 +1,34 @@
-objects = Card.o SpellCard.o ArmyCard.o Deck.o SpellDeck.o ArmyDeck.o 
+#be very careful with commends - spaces can cause errors.
 
-gameExec: $(objects)
-	g++ -o gameExec $(objects)
+ifeq ($(OS),Windows_NT)
+    SHELL := pwsh.exe
+else
+   SHELL := pwsh
+endif
+.SHELLFLAGS := -NoProfile -Command 
 
-main.o: ./src/main.cpp
-	g++ -c ./src/main.cpp
+CC = g++#compilation command
+IDIR = headers#include directory
+ODIR = obj#obj directory
 
-# DeckTest.o: catch2.hpp DeckTest.cpp
-# 	g++ -c DeckTest.cpp
-Card.o: ./src/headers/Card.h ./src/Card.cpp
-	g++ -c ./src/Card.cpp
+#Note: cpp files must be in the same directory as the makefile.
+#This is maybe changable by changing the '%.cpp' line to include the directory.
 
-SpellCard.o: ./src/headers/SpellCard.h ./src/SpellCard.cpp
-	g++ -c ./src/SpellCard.cpp
+CFLAGS = -I $(IDIR)#-I is include, then the dir.
 
-ArmyCard.o: ./src/headers/ArmyCard.h ./src/ArmyCard.cpp
-	g++ -c ./src/ArmyCard.cpp
+_DEPS = Card.h SpellCard.h ArmyCard.h Deck.h defs.h 
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-Deck.o: ./src/headers/Deck.h ./src/Deck.cpp
-	g++ -c ./src/Deck.cpp
+_OBJ = Card.o SpellCard.o ArmyCard.o Deck.o main.o
+OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
-SpellDeck.o: ./src/headers/SpellDeck.h ./src/SpellDeck.cpp
-	g++ -c ./src/SpellDeck.cpp
+$(ODIR)/%.o: %.cpp $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
-ArmyDeck.o: ./src/headers/ArmyDeck.h ./src/ArmyDeck.cpp
-	g++ -c ./src/ArmyDeck.cpp
+testExec: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS) 
 
-clean:
-	rm -f /src/*.o
+.PHONY: clean
+
+clean: 
+	del testExec.exe obj\*.o

@@ -2,6 +2,7 @@
 
 Deck::Deck(){
     cardsRemaining = 0;
+    std::cout<<"Core-Deck created"<<endl;
 }
 
 /**
