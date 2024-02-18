@@ -16,10 +16,10 @@ ODIR = obj#obj directory
 
 CFLAGS = -I $(IDIR)#-I is include, then the dir.
 
-_DEPS = Card.h SpellCard.h ArmyCard.h Deck.h defs.h 
+_DEPS = Card.h SpellCard.h ArmyCard.h Deck.h defs.h SpellDeck.h ArmyDeck.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = Card.o SpellCard.o ArmyCard.o Deck.o main.o
+_OBJ = Card.o SpellCard.o ArmyCard.o Deck.o SpellDeck.o ArmyDeck.o main.o 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.cpp $(DEPS)

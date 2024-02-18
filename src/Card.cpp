@@ -1,8 +1,8 @@
 #include "./headers/Card.h"
 
-Card::Card(string title){
+Card::Card(string name){
     std::cout<<"Card constructor called"<<endl;
-    title = title;
+    title = name;
 };
 
 Card::~Card(){
@@ -10,7 +10,7 @@ Card::~Card(){
 }
 
 void Card::print() const{
-    cout<<"Card name:"<<title<<endl;
+    cout<<"Card name:"<<this->getTitle()<<endl;
 };
 
 string Card::getTitle() const{

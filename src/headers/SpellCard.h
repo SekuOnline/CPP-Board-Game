@@ -16,7 +16,8 @@ class SpellCard : public Card{
 
         SpellType getSpellType() const;
         
-
+        void printSpellType() const;
         
 };
+
 #endif

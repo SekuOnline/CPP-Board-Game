@@ -20,6 +20,8 @@ enum ArmyType{
     HUMAN,
     ANGEL,
     UNDEAD,
+    HALLOWED
 };
+
 
 #endif //DEFS_H

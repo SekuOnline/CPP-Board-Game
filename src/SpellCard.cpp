@@ -21,6 +21,17 @@ SpellType SpellCard::getSpellType() const{
 }
 
 void SpellCard::print() const{
-    std::cout<<"Print"<<endl;
+    std::cout<<"Title: "<<title<<"\nSpell type: "<<endl;
+    printSpellType();
+}
+
+void  SpellCard::printSpellType() const{
+    switch(type){
+        case 0: std::cout<<"Fire"<<endl;    break;
+        case 1: std::cout<<"Water"<<endl;   break;
+        case 3: std::cout<<"Earth"<<endl;   break;
+        case 4: std::cout<<"Wind"<<endl;    break;
+        
+    }
 }
 

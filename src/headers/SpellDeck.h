@@ -14,6 +14,9 @@ class SpellDeck : public Deck{
 
         SpellDeck* clone() const{return new SpellDeck(*this);}
 
+
 };
+
+
 #endif //SPELLDECK_H
 

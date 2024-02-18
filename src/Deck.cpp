@@ -5,6 +5,10 @@ Deck::Deck(){
     std::cout<<"Core-Deck created"<<endl;
 }
 
+Deck::~Deck(){
+    std::cout<<"Deck Destroyed"<<endl;
+}
+
 /**
  * @brief Swap-Shuffle, goes through each index up to the # of cards remaining
  * and swaps the position with another card randomly.
@@ -43,8 +47,8 @@ void Deck::setCardsRemaining(int numCards){
  * @param card is a ptr to the card being added to the deck
  */
 
-template <class CardTemplate>
-void Deck::addCard(CardTemplate* card){
+
+void Deck::addCard(Card* card){
     if (cardsRemaining >= deckSize) return;
     deck[cardsRemaining] = card;
     cardsRemaining++;
@@ -55,7 +59,7 @@ void Deck::addCard(CardTemplate* card){
  * @brief Currently prints # of cards remaining.
  * May be expanded as more functionality is added to the classes.
  */
-void Deck::print() const{
+void Deck::print(){
     cout<<"Cards Remaining: "<<cardsRemaining<<endl;
     for(int i = 0; i < cardsRemaining; i++){
         deck[i]->print();

@@ -13,6 +13,7 @@ class ArmyDeck : public Deck{
 
         Deck* clone() const{return new ArmyDeck(*this);}
 
+
 };
 #endif //ARMYDECK_H
 

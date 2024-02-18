@@ -15,5 +15,7 @@ class ArmyCard : public Card{
         void print() const;
 
         ArmyType getArmyType() const;
+
+        void printArmyType() const;
 };
 #endif //ARMY_H
