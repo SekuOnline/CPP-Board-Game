@@ -1,4 +1,9 @@
 #include "./headers/Deck.h"
+/*
+-------------------------------------------------------------------------------
+De/Constructing
+-------------------------------------------------------------------------------
+*/
 
 Deck::Deck(){
     cardsRemaining = 0;
@@ -9,16 +14,22 @@ Deck::~Deck(){
     std::cout<<"Deck Destroyed"<<endl;
 }
 
+
+/*
+-------------------------------------------------------------------------------
+Methods
+-------------------------------------------------------------------------------
+*/
 /**
  * @brief Swap-Shuffle, goes through each index up to the # of cards remaining
  * and swaps the position with another card randomly.
  * If there is <= 1 card, the deck cannot be shuffled.
  * 
- * A CardTemplate class is used so that the function may be inherited by all other card types.
+ * @param tempCard is an empty pointer of cardType equivalent to the Deck Type.
  */
-template <class CardTemplate>
 
-void Deck:: shuffle(CardTemplate* tempCard){
+void Deck:: shuffle(Card* tempCard){
+    std::cout<<"\nShuffled:"<<endl;
     if (cardsRemaining <= 1) return;
     srand((unsigned) time(0));
     int index;
@@ -62,6 +73,14 @@ void Deck::addCard(Card* card){
 void Deck::print(){
     cout<<"Cards Remaining: "<<cardsRemaining<<endl;
     for(int i = 0; i < cardsRemaining; i++){
+        std::cout<<"Card at index: "<<i<<endl;
         deck[i]->print();
+        std::cout<<endl;
     }
 }
+
+/*
+-------------------------------------------------------------------------------
+Getters / Setters
+-------------------------------------------------------------------------------
+*/

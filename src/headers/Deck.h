@@ -13,16 +13,15 @@ class Deck{
         Deck();
         ~Deck();
 
-        template <class CardTemplate> 
-        void shuffle(CardTemplate* tempCard);
         
-        // template <class CardTemplate>
+        void shuffle(Card* tempCard);
+        
         void addCard(Card* card);
         
         void setCardsRemaining(int numCards);
         void print();
 
-        virtual Deck* clone() const = 0;    
+        virtual Deck* clone() const = 0;
         
 };
 #endif //DECK_H

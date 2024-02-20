@@ -1,4 +1,9 @@
 #include "./headers/ArmyCard.h"
+/*
+-------------------------------------------------------------------------------
+De/Constructing
+-------------------------------------------------------------------------------
+*/
 
 /**
  * @brief Construct a new Army Card object
@@ -8,22 +13,30 @@
  * @param armyType 
  */
 ArmyCard::ArmyCard(string title, ArmyType armyType) : Card(title){
-    std::cout<<"ArmyCard created: "<<title<<endl;
+    //std::cout<<"ArmyCard created: "<<title<<endl;
     type = armyType;
 }
 
 ArmyCard::~ArmyCard(){
-    std::cout<<"Spellcard destructor called"<<endl;
+    //std::cout<<"Spellcard destructor called"<<endl;
 }
 
-ArmyType ArmyCard::getArmyType() const{
-    return this->type;
-}
+/*
+-------------------------------------------------------------------------------
+Methods
+-------------------------------------------------------------------------------
+*/
 
 void ArmyCard::print() const{
-    std::cout<<"Print"<<endl;
+    std::cout<<"Title: "<<title<<"\nArmy type: "<<endl;
+    printArmyType();
 }
 
+/**
+ * @brief printing-method for the 'ArmyType' enum.
+ * Converts the index of the enum to its cooresponding type.
+ * 
+ */
 void  ArmyCard::printArmyType() const{
     switch(type){
         case 0: std::cout<<"Human"<<endl;       break;
@@ -35,4 +48,13 @@ void  ArmyCard::printArmyType() const{
     }
 }
 
+/*
+-------------------------------------------------------------------------------
+Getters / Setters
+-------------------------------------------------------------------------------
+*/
+
+ArmyType ArmyCard::getArmyType() const{
+    return this->type;
+}
 

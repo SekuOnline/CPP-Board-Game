@@ -1,0 +1,27 @@
+Tested deck functionality: Add card & shuffle.
+Both functions work well, perhaps shuffle shoudln't allow for 
+    a 'Card' pointer, as it can be misused if the wrong Card type is used
+    for a deck.
+
+I realized templates were unnecessary for allowing for 
+    Spell-Cards and Army-Cards to be used for Deck methods:
+    Since they're both sub-classes of 'Card', any function that
+    takes a 'Card' parameter will allow either Spell-Cards
+    or Army-Cards to be used.
+
+
+I would like to implement a unit-testing framework before continuing:
+    This will ensure that tests of the code will exist for checking
+    at every phase of the project.
+
+After this, the class structure can be expanded.
+A 'board' should be put into place, that allows for 2 players.
+Each player should have their own spell-deck and army-deck,
+    as well as a 'hand' in which cares are stored when outside of the deck.
+
+    This will also require either a 'discard' pile for cards,
+    or some function to place cards at the bottom of the deck.
+
+
+It is clear that the direct rules of the game will be required for 
+    the project to continue.
