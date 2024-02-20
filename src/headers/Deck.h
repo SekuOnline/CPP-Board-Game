@@ -7,9 +7,6 @@ class Deck{
 
     public: 
 
-        int cardsRemaining;
-        Card *deck[deckSize];
-
         Deck();
         ~Deck();
 
@@ -22,6 +19,12 @@ class Deck{
         void print();
 
         virtual Deck* clone() const = 0;
+
+        void getCard(int index, Card** cardPtr);
+
+    private:
+        int cardsRemaining;
+        Card* deck[deckSize];
         
 };
 #endif //DECK_H

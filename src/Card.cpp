@@ -7,12 +7,12 @@ De/Constructing
 */
 
 Card::Card(string name){
-    std::cout<<"Card constructor called"<<endl;
+    //std::cout<<"Card constructor called"<<endl;
     title = name;
 };
 
 Card::~Card(){
-    std::cout<<"Card Destructor called"<<endl;
+    //std::cout<<"Card Destructor called"<<endl;
 }
 
 /*

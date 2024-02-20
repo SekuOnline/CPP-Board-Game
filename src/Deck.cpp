@@ -84,3 +84,16 @@ void Deck::print(){
 Getters / Setters
 -------------------------------------------------------------------------------
 */
+
+void Deck::getCard(int index, Card** cardPtr){
+    if (index > deckSize || index < 0){
+        std::cout<<"Invalid index"; return;
+    }
+    if (deck[index] == nullptr){
+        std::cout<<"nullptr @ index"<<endl; return;
+    }
+    std::cout<<"Past condition in getCard"<<endl;
+    *cardPtr = deck[index];
+    std::cout<<"Set pointer"<<endl;
+
+}

@@ -2,6 +2,7 @@
 // #include "catch2.hpp"
 #include "./headers/SpellCard.h"
 #include "./headers/SpellDeck.h"
+#include <assert.h>
 
 using namespace std;
 
@@ -17,11 +18,21 @@ int main(){
     sDeck->addCard(card3);
     sDeck->addCard(card4);
 
+    std::cout<<"Before getCard"<<endl;
+    Card* cardRef;
+    sDeck->getCard(0, &cardRef);
+    std::cout<<"After getCard"<<endl;
 
-    sDeck->print();
-    SpellCard* tempCard;
-    sDeck->shuffle(tempCard);
+    //card1->print();
+
+    cardRef->print();
+    std::cout<<"Running 'Get Card' Test"<<endl;
+    assert(cardRef == card1);
+    std::cout<<"Get Card Test Passed";
+    // sDeck->print();
+    // SpellCard* tempCard;
+    // sDeck->shuffle(tempCard);
     
-    sDeck->print();
+    // sDeck->print();
     
 }
