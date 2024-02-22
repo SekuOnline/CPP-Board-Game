@@ -1,4 +1,4 @@
-﻿# C++ BoardGame Project
+﻿# C++ Project Hex (Board-game)
  
  All code written by David Sedarous / SekuOnline@github 
  
